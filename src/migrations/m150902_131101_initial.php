@@ -1,7 +1,7 @@
 <?php
 
 use app\models\PropertyHandler;
-use DotPlant\CategoryRelationProperty\properties\handlers\CategoryRelation\CategoryRelationProperty;
+use DotPlant\CategoryRelationProperty\properties\handlers\сategoryRelation\CategoryRelationProperty;
 use yii\db\Migration;
 
 class m150902_131101_initial extends Migration
