@@ -1,0 +1,11 @@
+{
+  "name": "dotplant/category-relation-property",
+  "description": "Related categories property handler",
+  "type": "dotplant2-extension",
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "DotPlant\\CategoryRelationProperty\\": "src/"
+    }
+  }
+}
