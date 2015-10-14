@@ -19,7 +19,11 @@ use kartik\helpers\Html;
 
 $categoriesIds = ArrayHelper::getColumn($values->values, 'value');
 /** @var Category[] $categories */
-$categories = Category::findAll($categoriesIds);
+
+$categories = [];
+foreach ($categoriesIds as $id) {
+    $categories[] = Category::findOne($id);
+}
 
 ?>
 

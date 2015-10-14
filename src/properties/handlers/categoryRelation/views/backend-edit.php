@@ -17,7 +17,11 @@ use app\modules\shop\models\Category;
 use yii\helpers\ArrayHelper;
 
 $categoriesIds = ArrayHelper::getColumn($values->values, 'value');
-$data = ArrayHelper::map(Category::findAll($categoriesIds), 'id', 'name');
+$data = [];
+foreach ($values->values as $value) {
+    $category = Category::findOne($value['value']);
+    $data [$category->id] = $category->name;
+}
 
 ?>
 
