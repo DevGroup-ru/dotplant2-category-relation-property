@@ -19,8 +19,8 @@ use yii\helpers\ArrayHelper;
 $categoriesIds = ArrayHelper::getColumn($values->values, 'value');
 $data = [];
 foreach ($values->values as $value) {
-    $category = Category::findOne($value['value']);
-    if ($category) {
+    $category = Category::findById($value['value']);
+    if ($category !== null) {
         $data [$category->id] = $category->name;
     }
 }

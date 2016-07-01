@@ -19,8 +19,10 @@ $categoriesIds = ArrayHelper::getColumn($values->values, 'value');
 
 $data = [];
 foreach ($values->values as $value) {
-    $category = Category::findOne($value['value']);
-    $data [$category->id] = $category->name;
+    $category = Category::findById($value['value']);
+    if ($category !== null) {
+        $data [$category->id] = $category->name;
+    }
 }
 
 ?>

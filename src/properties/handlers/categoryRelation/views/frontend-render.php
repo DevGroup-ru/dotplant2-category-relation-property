@@ -22,7 +22,10 @@ $categoriesIds = ArrayHelper::getColumn($values->values, 'value');
 
 $categories = [];
 foreach ($categoriesIds as $id) {
-    $categories[] = Category::findOne($id);
+    $_category = Category::findById($id);
+    if ($_category !== null) {
+        $categories[] = $_category;
+    }
 }
 
 ?>
